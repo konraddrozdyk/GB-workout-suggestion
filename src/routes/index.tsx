@@ -9,7 +9,15 @@ function IndexPage() {
 
   const handleSuggest = (event: React.FormEvent) => {
     event.preventDefault();
-    navigate({ to: "/suggestions" });
+
+    const equipment = (event.currentTarget as any).equipment.value;
+    const difficulty = (event.currentTarget as any).difficulty.value;
+    const goal = (event.currentTarget as any).goal.value;
+
+    navigate({
+      to: "/suggestions",
+      search: { equipment, difficulty, goal },
+    });
   };
 
   return (
@@ -19,6 +27,24 @@ function IndexPage() {
           Find Your Workout
         </h1>
         <form className="space-y-4" onSubmit={handleSuggest}>
+          <div>
+            <label
+              htmlFor="equipment"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Equipment
+            </label>
+            <select
+              id="equipment"
+              name="equipment"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="none">None</option>
+              <option value="home-equipment">Home Equipment</option>
+              <option value="gym">Gym</option>
+            </select>
+          </div>
+
           <div>
             <label
               htmlFor="difficulty"
@@ -39,19 +65,19 @@ function IndexPage() {
 
           <div>
             <label
-              htmlFor="duration"
+              htmlFor="goal"
               className="block text-sm font-medium text-gray-700"
             >
-              Duration (minutes)
+              Goal
             </label>
             <select
-              id="duration"
-              name="duration"
+              id="goal"
+              name="goal"
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
             >
-              <option value="15">15</option>
-              <option value="30">30</option>
-              <option value="45">45</option>
+              <option value="weight-loss">Weight Loss</option>
+              <option value="muscle-growth">Muscle Growth</option>
+              <option value="fitness">Fitness</option>
             </select>
           </div>
 
