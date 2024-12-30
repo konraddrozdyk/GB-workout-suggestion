@@ -29,3 +29,16 @@ This is a React-based prototype application for suggesting workouts to users bas
 - **Vite**: A fast and lightweight development server and build tool.
 
 ---
+
+## Future Improvements
+
+Here are some potential enhancements to improve the functionality and user experience of the app:
+
+- **Additional Exercises**: Expand the database of exercises to include more variations, catering to a wider range of user preferences and goals.
+- **Swap Exercise Option**: Add a feature that allows users to swap out suggested exercises they don’t find suitable with alternative recommendations.
+- **Backend Integration**: Implement a backend to:
+  - Store user preferences and workout history.
+  - Fetch exercises dynamically from a database.
+  - Enable user accounts for personalized suggestions and progress tracking.
+- **User Feedback**: Add a feature for users to provide feedback on the suggested workouts to improve recommendations over time.
+- **Advanced Filters**: Allow users to apply more specific filters, such as duration, targeted muscle groups, or available time.
